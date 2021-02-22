@@ -1,9 +1,11 @@
-import React, {Component} from 'react';
-import CssCls from './Login.css';
+import React from 'react';
+import CssCls from './LoginForm.css';
+import logo from '../img/abo4.svg';
 
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
+        //set and initailize state
         this.state = {
             mailAddress: "",
             password: ""
@@ -32,14 +34,15 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className={CssCls.Top}>
+            <div className={CssCls.Wrapper}>
+                <img src={logo}/>
                 <p>Sign In</p>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.mailAddress} onChange={this.handleMailChange} placeholder="Input Email address"/>
                     <input type="text" value={this.state.password} onChange={this.handlePassChange} placeholder="Input Password"/>
-                    <input type="submit" value="submit"/>
+                    <input type="submit" value="Login"/>
                 </form>
-            </div>
+            </div>    
         );
     }
 }
