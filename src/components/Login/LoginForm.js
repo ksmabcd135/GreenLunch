@@ -1,6 +1,6 @@
 import React from 'react';
 import CssCls from './LoginForm.css';
-import logo from '../img/abo4.svg';
+import logo from '../../img/abo4.svg';
 
 class LoginForm extends React.Component {
     constructor(props) {

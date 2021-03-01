@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import LoginForm from './Login/LoginForm';
+import MainPage from './pages/Main';
+import LoginPage from './pages/Login';
+import { BrowserRouter as Router,Route } from 'react-router-dom';
 
 class App extends Component {
 
   render() {
     return (
-      <div>
-        <LoginForm/>
-      </div>
+      <>
+      <Router>
+        <Route path='/' exact component={LoginPage}/>
+        <Route path='/main' component={MainPage}/>
+      </Router>
+      </>
     )
   }
 }
