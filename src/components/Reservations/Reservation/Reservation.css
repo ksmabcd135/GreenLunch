@@ -1,0 +1,12 @@
+.Item {
+    border: 1px solid salmon;
+    flex-grow: 1;
+    width: 100px;
+    height: 100px;
+}
+
+@media (min-width: 600px) {
+    .Item {
+      flex-basis: 50%;
+    }
+  }
