@@ -1,16 +1,12 @@
 import React from 'react';
 import classes from './Reservation.css';
+import Title from './Title/Title';
 
 const reservation = () => {
     return(
         <div className={classes.Item}>
-        test grid layout for Reservations items        test grid layout for Reservations items
+        <Title/>
         test grid layout for Reservations items
-        test grid layout for Reservations items
-        test grid layout for Reservations items
-        test grid layout for Reservations items
-        test grid layout for Reservations items
-
         </div>
     )
 }

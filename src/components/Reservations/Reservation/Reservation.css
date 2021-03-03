@@ -1,12 +1,13 @@
 .Item {
     border: 1px solid salmon;
     flex-grow: 1;
-    width: 100px;
-    height: 100px;
+    height: 300px;
+    margin-left: 30px;
+    padding: 1em;
 }
 
 @media (min-width: 600px) {
     .Item {
-      flex-basis: 50%;
+      flex-basis: 20%;
     }
   }

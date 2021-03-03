@@ -6,6 +6,9 @@ const reservations = () => {
     return (
         <div className={classes.Container}>
             <Reservation/>
+            <Reservation/>
+            <Reservation/>
+            <Reservation/>
         </div>
     )
 }
