@@ -6,9 +6,9 @@ import Footer from './Footer/Footer';
 const reservation = () => {
     return(
         <div className={classes.Item}>
-        <Title/>
-        test grid layout for Reservations items
-        <Footer/>
+            <Title/>
+            test grid layout for Reservations items
+            <Footer/>
         </div>
     )
 }

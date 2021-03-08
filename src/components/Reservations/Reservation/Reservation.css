@@ -1,6 +1,5 @@
 .Item {
     border: 1px solid salmon;
-    flex-grow: 1;
     height: 300px;
     margin-left: 30px;
     padding: 1em;

@@ -4,6 +4,8 @@
 }
 
 .Footer button {
-    width: 80px;
+    width: 150px;
     margin: auto;
+    top: 50%;
+    left: 50%;
 }
