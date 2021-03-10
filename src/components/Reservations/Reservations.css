@@ -6,7 +6,9 @@
     margin-left: 20%;
     margin-right: 10%;
 }
-
+.Container button {
+    flex-basis: 100%;
+}
 @media (min-width: 600px) {
     .Container{
         flex-direction: row;
@@ -16,5 +18,3 @@
         margin-right: 10%;
     }
 }
-
-.Button {}
