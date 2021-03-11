@@ -13,9 +13,11 @@ class Reservations extends React.Component {
   }
   render() {
     return (
+      <div className={classes.Wrapper}>
       <div className={classes.Container}>
         <button onClick={this.appendItem}>ADD Item</button>
         {this.state.items}
+      </div>
      </div>
     )
   }

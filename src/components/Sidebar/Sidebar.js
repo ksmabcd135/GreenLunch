@@ -14,13 +14,14 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-const drawerWidth = 240;
+const drawerWidth = '15%';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
   appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
+    backgroundColor: '#cb9ca1',
+    width: `calc(100% - ${drawerWidth})`,
     marginLeft: drawerWidth,
   },
   drawer: {
@@ -46,7 +47,7 @@ export default function PermanentDrawerLeft() {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap className={classes.typography}>
             Lunch Matching by GreenDot.
           </Typography>
         </Toolbar>
