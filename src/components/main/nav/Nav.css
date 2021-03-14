@@ -1,0 +1,14 @@
+.Nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 20px;
+}
+.List {
+	list-style-type: none;
+}
+
+.List li {
+	display: inline-block;
+	padding: 0 30px;
+}

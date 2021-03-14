@@ -4,18 +4,14 @@
     min-height: 100vh;
     flex-basis: 30%;
     justify-content: center;
-    margin-left: 10%;
 }
 .Container button {
     flex-basis: 100%;
-    left: 240px;
 }
 @media (min-width: 600px) {
     .Container{
-        margin-left: 10%;
         flex-flow: row wrap;
         flex-basis: 30%;
         justify-content: center;
-        left: 1000px;
     }
 }
