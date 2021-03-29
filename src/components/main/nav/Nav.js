@@ -13,7 +13,7 @@ class Nav extends React.Component {
             <li><a>MY</a></li>
           </ul>
         </nav>
-        <img className={classes.Food} src={foodImage}/>
+        <header className={classes.Food}/>
       </div>
             
         )
