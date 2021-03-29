@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Nav.css';
-import BrandImage from '../../../img/green_dot.png';
+import foodImage from '../../../img/food.jpeg';
+
 class Nav extends React.Component {
     
   render() {
@@ -12,6 +13,7 @@ class Nav extends React.Component {
             <li><a>MY</a></li>
           </ul>
         </nav>
+        <img className={classes.Food} src={foodImage}/>
       </div>
             
         )
