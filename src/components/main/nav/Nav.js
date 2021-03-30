@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './Nav.css';
-import foodImage from '../../../img/food.jpeg';
 
 class Nav extends React.Component {
     
@@ -14,6 +13,8 @@ class Nav extends React.Component {
           </ul>
         </nav>
         <header className={classes.Food}/>
+        <h1 className={classes.Title}><span><strong>Having </strong></span>Lunch With <br/>Your 仲間</h1>
+        <h5 className={classes.Scroll}>scroll</h5>
       </div>
             
         )

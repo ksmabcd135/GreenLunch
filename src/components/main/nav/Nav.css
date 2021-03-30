@@ -16,7 +16,26 @@
 
 .Food {
 	height: 90vh;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.7)), url(../../../img/food.jpeg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.8)), url(../../../img/food2.jpg);
 	background-position: center;
 	background-size: cover;
+}
+
+.Title {
+	position: absolute;
+	line-height: 1.5em;
+	color: white;
+	font-size: 80px;
+	left: 10%;
+	top: 30%;
+}
+
+.Scroll {
+	position: absolute;
+	font-size: 15px;
+	font-weight: 700;
+	color: white;
+	left: 50%;
+	top: 80%;
+	
 }
