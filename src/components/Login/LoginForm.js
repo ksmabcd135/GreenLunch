@@ -1,6 +1,9 @@
 import React from 'react';
 import CssCls from './LoginForm.css';
 import logo from '../../img/abo4.svg';
+import {GoogleLogin} from 'react-google-login';
+
+const clientId = 'test';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -15,32 +18,29 @@ class LoginForm extends React.Component {
         this.handlePassChange = this.handlePassChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
-    handleSubmit(event) {
-        console.log('mail address >>' + this.state.mailAddress + 'password>>' + this.state.password);
-    }
-    handleMailChange(event) {
-        const cMail = event.target.value;
-        this.setState({
-            mailAddress: cMail
-        });
-    }
-    handlePassChange(event) {
-        const cPass = event.target.value;
-        this.setState({
-          password: cPass  
-        });
-    }
 
     render() {
+        //for login
+        const onSuccess = (res) => {
+            console.log('[Login Success] current User:',res.profileObj);
+        }
+        const onFailure = (res) => {
+            console.log('[Login Failed] res:',res);
+        }
+
         return (
             <div className={CssCls.Wrapper}>
                 <img src={logo}/>
                 <p>Sign In</p>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.mailAddress} onChange={this.handleMailChange} placeholder="Input Email address"/>
-                    <input type="text" value={this.state.password} onChange={this.handlePassChange} placeholder="Input Password"/>
-                    <input type="submit" value="Login"/>
+                    <GoogleLogin
+                        clientId = {clientId}
+                        buttonText = "Login"
+                        onSuccess = {onSuccess}
+                        onFailure = {onFailure}
+                        cookiePolicy = {'single_host_origin'}
+                        isSignedIn = {true}
+                    />
                 </form>
             </div>    
         );
