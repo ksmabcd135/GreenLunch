@@ -8,15 +8,6 @@ const clientId = 'test';
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
-        //set and initailize state
-        this.state = {
-            mailAddress: "",
-            password: ""
-        }
-
-        this.handleMailChange = this.handleMailChange.bind(this);
-        this.handlePassChange = this.handlePassChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     render() {
@@ -32,7 +23,7 @@ class LoginForm extends React.Component {
             <div className={CssCls.Wrapper}>
                 <img src={logo}/>
                 <p>Sign In</p>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <GoogleLogin
                         clientId = {clientId}
                         buttonText = "Login"
