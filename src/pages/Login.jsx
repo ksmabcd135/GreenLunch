@@ -1,11 +1,11 @@
 import React from 'react';
-import LoginForm from '../components/Login/LoginForm';
-function Login() {
+import Login from '../components/Auth/Login';
+function LoginPage() {
     return (
         <div>
-            <LoginForm/>
+            <Login/>
         </div>
     )
 }
 
-export default Login;
+export default LoginPage;
