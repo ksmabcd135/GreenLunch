@@ -1,4 +1,3 @@
-
 .Wrapper {
     background-color: #f44336;
     border-radius: 10px;
@@ -15,7 +14,7 @@
     height: 400px;
 }
 
-.Wrapper form input{
+.Wrapper form input {
     width: 80%;
     height: 100%;
     margin: 10px;

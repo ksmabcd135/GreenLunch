@@ -1,22 +1,22 @@
-import React from 'react';
-import {GoogleLogout} from 'react-google-login';
+import React from "react";
+import { GoogleLogout } from "react-google-login";
 
-const clientId = '';
+const clientId = "";
 
 function Logout() {
   const onSuccess = () => {
-    alert('Logout Success!');
+    alert("Logout Success!");
   };
 
   return (
     <div>
       <GoogleLogout
-        clientId = {clientId}
-        buttonText = "Logout"
-        onLogoutSuccess = {onSuccess}
-      />      
+        clientId={clientId}
+        buttonText="Logout"
+        onLogoutSuccess={onSuccess}
+      />
     </div>
-  )
+  );
 }
 
 export default Logout;
