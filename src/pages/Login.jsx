@@ -1,11 +1,11 @@
-import React from 'react';
-import Login from '../components/Auth/Login';
+import React from "react";
+import Auth from "../components/Auth/Auth";
 function LoginPage() {
-    return (
-        <div>
-            <Login/>
-        </div>
-    )
+  return (
+    <div>
+      <Auth />
+    </div>
+  );
 }
 
 export default LoginPage;

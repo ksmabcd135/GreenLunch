@@ -1,9 +1,8 @@
 import React from "react";
-import CssCls from "./Login.css";
-import logo from "../../img/abo4.svg";
 import { GoogleLogin } from "react-google-login";
 
-const clientId = "test";
+const clientId =
+  "565601053406-4h26g5f2lioi07q0p68tq7b76je9dl9g.apps.googleusercontent.com";
 
 function Login() {
   const onSuccess = (res) => {
@@ -13,9 +12,7 @@ function Login() {
     console.log("[Login Failed] res:", res);
   };
   return (
-    <div className={CssCls.Wrapper}>
-      <img src={logo} />
-      <p>Sign In</p>
+    <div>
       <GoogleLogin
         clientId={clientId}
         buttonText="Login"
