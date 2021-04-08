@@ -1,8 +1,7 @@
 import React from "react";
 import { GoogleLogout } from "react-google-login";
 
-const clientId = "test";
-
+const clientId = "";
 function Logout() {
   const onSuccess = () => {
     alert("Logout Success!");
