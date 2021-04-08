@@ -8,7 +8,9 @@ import { logIn, logOut } from "../../actions";
 class Auth extends React.Component {
   state = { isSignedIn: null };
 
-  componentDidMount() {}
+  componentDidMount() {
+    window.gapi.load
+  }
   render() {
     return (
       <div className={classes.Wrapper}>
