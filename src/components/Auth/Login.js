@@ -11,7 +11,7 @@ function Login() {
   return (
     <div>
       <GoogleLogin
-        clientId={clientId}
+        clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID}
         buttonText="Login"
         onSuccess={onSuccess}
         onFailure={onFailure}

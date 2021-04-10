@@ -10,10 +10,15 @@ class Auth extends React.Component {
 
   componentDidMount() {
     window.gapi.load("client:auth2", () => {
-      window.gapi.client.init({
-        client_id: process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID,
-        scope: "email",
-      });
+      window.gapi.client
+        .init({
+          client_id: process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID,
+          scope: "email",
+        })
+        .then(() => {
+          this.auth = window.gapi.auth2.getAuthInstance();
+          this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+        });
     });
   }
   render() {
