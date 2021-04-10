@@ -18,10 +18,14 @@ class Auth extends React.Component {
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
           this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+          this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
   }
 
+  onAuthChange = () => {
+    this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+  };
   retrieveUserStatus() {
     if (this.state.isSignedIn === null) {
       return "UNKNOWN";
@@ -31,13 +35,31 @@ class Auth extends React.Component {
       return "NOT SIGNED IN";
     }
   }
+
+  //Auth eventListener
+  onSignInClick = () => {
+    this.auth.signIn();
+  };
+  onSignOutClick = () => {
+    this.auth.signOut();
+  };
+
+  renderAuthButton = () => {
+    if (this.state.isSignedIn === null) {
+      return null;
+    } else if (this.state.isSignedIn) {
+      return <button onClick={this.onSignOutClick}>SignOut</button>;
+    } else {
+      return <button onClick={this.onSignInClick}>SignIn</button>;
+    }
+  };
+
   render() {
     return (
       <div className={classes.Wrapper}>
-        <p>Sign In</p>
+        <p>Google Sign In</p>
         <img src={logo} />
-        <Login />
-        <Logout />
+        <div>{this.renderAuthButton()}</div>
       </div>
     );
   }
