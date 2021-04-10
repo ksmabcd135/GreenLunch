@@ -21,6 +21,16 @@ class Auth extends React.Component {
         });
     });
   }
+
+  retrieveUserStatus() {
+    if (this.state.isSignedIn === null) {
+      return "UNKNOWN";
+    } else if (this.state.isSignedIn) {
+      return "SIGNEDIN";
+    } else {
+      return "NOT SIGNED IN";
+    }
+  }
   render() {
     return (
       <div className={classes.Wrapper}>
