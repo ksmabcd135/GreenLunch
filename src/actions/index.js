@@ -1,15 +1,15 @@
 //複数のreducerを渡すために
 import { combineReducers } from "redux";
 
-export const logIn = () => {
+export const signIn = () => {
   return {
-    type: "LOG_IN",
+    type: "SIGN_IN",
   };
 };
 
-export const logOut = () => {
+export const signOut = () => {
   return {
-    type: "LOG_OUT",
+    type: "SIGN_OUT",
   };
 };
 

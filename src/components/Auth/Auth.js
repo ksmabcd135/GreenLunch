@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./Auth.css";
 import logo from "../../img/abo4.svg";
-import Login from "./Login";
-import Logout from "./Logout";
-import { logIn, logOut } from "../../actions";
+import { signIn, signOut } from "../../actions";
+import { link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Auth extends React.Component {
   state = { isSignedIn: null };
@@ -17,15 +17,20 @@ class Auth extends React.Component {
         })
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
-          this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+          this.onAuthChange(this.auth.isSignedIn.get());
           this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
   }
 
-  onAuthChange = () => {
-    this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+  onAuthChange = (isSignedIn) => {
+    if (isSignedIn) {
+      this.props.signIn();
+    } else {
+      this.props.signOut();
+    }
   };
+
   retrieveUserStatus() {
     if (this.state.isSignedIn === null) {
       return "UNKNOWN";
@@ -36,18 +41,18 @@ class Auth extends React.Component {
     }
   }
 
-  //Auth eventListener
   onSignInClick = () => {
     this.auth.signIn();
   };
+
   onSignOutClick = () => {
     this.auth.signOut();
   };
 
   renderAuthButton = () => {
-    if (this.state.isSignedIn === null) {
+    if (this.props.isSignedIn === null) {
       return null;
-    } else if (this.state.isSignedIn) {
+    } else if (this.props.isSignedIn) {
       return <button onClick={this.onSignOutClick}>SignOut</button>;
     } else {
       return <button onClick={this.onSignInClick}>SignIn</button>;
@@ -57,7 +62,7 @@ class Auth extends React.Component {
   render() {
     return (
       <div className={classes.Wrapper}>
-        <p>Google Sign In</p>
+        <p>Google SignIn</p>
         <img src={logo} />
         <div>{this.renderAuthButton()}</div>
       </div>
@@ -65,4 +70,7 @@ class Auth extends React.Component {
   }
 }
 
-export default Auth;
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
+};
+export default connect(mapStateToProps, { signIn, signOut })(Auth);
