@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./Reservations.css";
+import "./Reservations.css";
 import Reservation from "./Reservation/Rerservation";
 
 const Reservations = () => {
@@ -9,8 +9,8 @@ const Reservations = () => {
     setItems([...items, newItem]);
   };
   return (
-    <div className={classes.Wrapper}>
-      <div className={classes.Container}>
+    <div className="wrapper">
+      <div className="container">
         <button onClick={appendItem}>ADD Item</button>
         {items}
       </div>

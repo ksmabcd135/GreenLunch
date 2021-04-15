@@ -1,19 +1,19 @@
-.Container {
-    display: flex;
-    flex-flow: row wrap;
-    min-height: 100vh;
-    flex-basis: 30%;
-    justify-content: center;
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  min-height: 100vh;
+  flex-basis: 30%;
+  justify-content: center;
 }
 
-.Container button {
-    flex-basis: 100%;
+.container button {
+  flex-basis: 100%;
 }
 
 @media (min-width: 600px) {
-    .Container {
-        flex-flow: row wrap;
-        flex-basis: 30%;
-        justify-content: center;
-    }
+  .container {
+    flex-flow: row wrap;
+    flex-basis: 30%;
+    justify-content: center;
+  }
 }

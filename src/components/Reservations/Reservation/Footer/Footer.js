@@ -1,8 +1,8 @@
-import classes from "./Footer.css";
+import "./Footer.css";
 
 const footer = () => {
   return (
-    <div className={classes.Footer}>
+    <div className="title">
       <button>Join</button>
       <button>cancel</button>
     </div>

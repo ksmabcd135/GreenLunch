@@ -1,11 +1,11 @@
 import React from "react";
-import classes from "./Nav.css";
+import "./Nav.css";
 
 const Nav = () => {
   return (
     <div>
-      <nav className={classes.nav}>
-        <ul className={classes.list}>
+      <nav className="nav">
+        <ul className="list">
           <li>
             <a>All</a>
           </li>
@@ -14,16 +14,16 @@ const Nav = () => {
           </li>
         </ul>
       </nav>
-      <header className={classes.food} />
-      <h1 className={classes.title}>
+      <header className="food" />
+      <h1 className="title">
         <span>
           <strong>Having </strong>
         </span>
         Lunch With <br />
         Your 仲間
       </h1>
-      <h5 className={classes.scroll}>SCROLL</h5>
-      <span className={classes.scrollbar} />
+      <h5 className="scroll">SCROLL</h5>
+      <span className="scrollbar" />
     </div>
   );
 };

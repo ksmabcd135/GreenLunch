@@ -1,8 +1,8 @@
-import classes from "./Title.css";
+import "./Title.css";
 
 const title = () => {
   let title = "Test Title";
-  return <h1 className={classes.Header}>{title}</h1>;
+  return <h1 className="header">{title}</h1>;
 };
 
 export default title;

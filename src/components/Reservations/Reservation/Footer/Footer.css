@@ -1,10 +1,10 @@
-.Footer {
-    align-items: center;
-    margin-top: 40%;
-    text-align: center;
+.footer {
+  align-items: center;
+  margin-top: 40%;
+  text-align: center;
 }
 
-.Footer button {
-    position: static;
-    width: 150px;
+.footer button {
+  position: static;
+  width: 150px;
 }

@@ -17,7 +17,8 @@
 
 .food {
   height: 90vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(../../../img/food2.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+    url(../../../img/food2.jpg);
   background-position: center;
   background-size: cover;
 }
