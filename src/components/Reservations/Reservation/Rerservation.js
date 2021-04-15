@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Reservation.css";
 import Title from "./Title/Title";
 import Footer from "./Footer/Footer";

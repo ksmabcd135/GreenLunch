@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleLogout } from "react-google-login";
 
-function Logout() {
+const Logout = () => {
   const onSuccess = () => {
     alert("Logout Success!");
   };
@@ -15,6 +15,6 @@ function Logout() {
       />
     </div>
   );
-}
+};
 
 export default Logout;

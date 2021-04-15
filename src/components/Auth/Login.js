@@ -1,7 +1,6 @@
-import React from "react";
 import { GoogleLogin } from "react-google-login";
 
-function Login() {
+const Login = () => {
   const onSuccess = (res) => {
     console.log("[Login Success] current User:", res.profileObj);
   };
@@ -20,6 +19,6 @@ function Login() {
       />
     </div>
   );
-}
+};
 
 export default Login;

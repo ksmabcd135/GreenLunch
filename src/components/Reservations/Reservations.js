@@ -1,25 +1,20 @@
-import React from "react";
+import { useState } from "react";
 import classes from "./Reservations.css";
 import Reservation from "./Reservation/Rerservation";
 
-class Reservations extends React.Component {
-  state = {
-    items: [],
-  };
-  appendItem = () => {
-    const items = this.state.items;
+const Reservations = () => {
+  const [items, setItems] = useState([]);
+  const appendItem = () => {
     const newItem = <Reservation />;
-    this.setState({ items: [...items, newItem] });
+    setItems([...items, newItem]);
   };
-  render() {
-    return (
-      <div className={classes.Wrapper}>
-        <div className={classes.Container}>
-          <button onClick={this.appendItem}>ADD Item</button>
-          {this.state.items}
-        </div>
+  return (
+    <div className={classes.Wrapper}>
+      <div className={classes.Container}>
+        <button onClick={appendItem}>ADD Item</button>
+        {items}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 export default Reservations;
