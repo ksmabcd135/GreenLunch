@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Reservations.css";
 import Reservation from "./Reservation/Rerservation";
 
+//reservation card views weill come to this func
 const Reservations = () => {
   const [items, setItems] = useState([]);
   const appendItem = () => {
