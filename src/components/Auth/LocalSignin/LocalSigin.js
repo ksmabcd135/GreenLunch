@@ -18,13 +18,22 @@ const LocalSignin = () => {
 
   return (
     <form onSubmit={localSiginHandler}>
+      <h2>SIGNIN</h2>
       <div>
-        <label>ID</label>
-        <input type="text" value={idText} onChange={idTextChangeHandler} />
+        <input
+          type="text"
+          placeholder="ID"
+          value={idText}
+          onChange={idTextChangeHandler}
+        />
       </div>
       <div>
-        <label>PASSWORD</label>
-        <input type="password" value={pwText} onChange={pwTextChangeHandler} />
+        <input
+          type="password"
+          placeholder="PW"
+          value={pwText}
+          onChange={pwTextChangeHandler}
+        />
       </div>
       <button type="submit">SIGNIN</button>
     </form>
