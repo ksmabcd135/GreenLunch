@@ -1,24 +1,33 @@
-const { ApolloServer } = require("apollo-server");
+const { ApolloServer, gql } = require("apollo-server");
 
 //define test SCHEMA
-const typeDefs = `
+const typeDefs = gql`
+  #User Schema for login user
+  type User {
+    id: String
+    pw: String
+  }
+
   type Query {
-    info: String!
+    users: [User]
   }
 `;
 
-//Actual implementation of GraphQL
+const users = [
+  {
+    id: 'test',
+    pw: '123'
+  }
+]
+
 const resolvers = {
   Query: {
-    info: () => `This is the test API of GraphQL`,
-  },
-};
+    users: () => users,
+  }
+}
+const server = new ApolloServer({ typeDefs, resolvers });
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
-
+// The `listen` method launches a web server.
 server.listen().then(({ url }) => {
-  console.log(`server is running on ${url}`);
+  console.log(`🚀  Server ready at ${url}`);
 });
