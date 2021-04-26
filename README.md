@@ -6,4 +6,4 @@ Lunch Matching Web Application
 
 front-end: react.JS
 
-back-end node.JS,graphQL
+back-end node.JS,graphQL,mongoDB
