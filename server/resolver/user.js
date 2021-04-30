@@ -2,17 +2,33 @@
 const User = require("../model/userModel");
 const resolvers = {
   Query: {
-    user(_, args) {
+    users(_, args) {
       return User.find();
     },
   },
-  Mutation: {
-    createUser(_, args) {
-      const newUser = new User({
-        ...args.personInput,
-      });
-      return newUser.save();
+  User: {
+    _id(_, args) {
+      return _._id;
     },
+    userId(_, args) {
+      return _.userId;
+    },
+    userPw(_, args) {
+      return _.userPw;
+    }
+  },
+  Mutation: {
+    async createUser(_, args) {
+      try {
+        const user = new User({
+          ...args.userInput,
+        })
+        const result = await user.save();
+        return result;
+      } catch (err) {
+        throw err;
+      }
+    }
   },
 };
 
