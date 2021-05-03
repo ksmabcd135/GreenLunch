@@ -1,7 +1,10 @@
 const userResolvers = require('./user');
 
 const resolvers = {
-  ...userResolvers
+  ...userResolvers,
+    Mutation:{
+    ...userResolvers.Mutation,
+  }
 };
 
 module.exports = resolvers; 
