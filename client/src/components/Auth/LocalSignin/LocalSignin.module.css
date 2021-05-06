@@ -43,5 +43,12 @@
 }
 
 .form input:focus {
-  border-bottom:2px solid #f1634a;
+  border-bottom: 2px solid #f1634a;
+}
+
+button:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #666666;
+  cursor: not-allowed;
 }

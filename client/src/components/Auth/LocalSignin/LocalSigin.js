@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import styles from "./LocalSignin.module.css";
 
 const LocalSignin = () => {
   //state for siginin
   const [idText, setIdText] = useState("");
   const [pwText, setPwText] = useState("");
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  useEffect(() => {
+    setFormIsValid(
+      idText.trim().length > 6 && pwText.trim().length > 6
+    );
+  }, [idText, pwText]);
+
   //handlers
   const idTextChangeHandler = (event) => {
     setIdText(event.target.value);
@@ -33,7 +41,7 @@ const LocalSignin = () => {
         onChange={pwTextChangeHandler}
       />
       <p>Forgot your password?</p>
-      <button type="submit">SIGNIN</button>
+      <button type="submit" disabled={!formIsValid}>SIGNIN</button>
     </form>
   );
 };
