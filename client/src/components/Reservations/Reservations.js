@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import "./Reservations.css";
 import Reservation from "./Reservation/Rerservation";
 

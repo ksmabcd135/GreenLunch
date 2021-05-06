@@ -8,9 +8,12 @@ const LocalSignin = () => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
-    setFormIsValid(
-      idText.trim().length > 6 && pwText.trim().length > 6
-    );
+    const identifier = setTimeout(() => {
+      setFormIsValid(
+        idText.trim().length > 6 && pwText.trim().length > 6
+      );
+    }, 500);
+    return () => { clearTimeout(identifier) };
   }, [idText, pwText]);
 
   //handlers
