@@ -6,8 +6,17 @@
   justify-content: center;
 }
 
-.container button {
-  flex-basis: 100%;
+.fab {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: #f1634a;
+  border: none;
+  font-size: 30px;
+  color: white;
 }
 
 @media (min-width: 600px) {
