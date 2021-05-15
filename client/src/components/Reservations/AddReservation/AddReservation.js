@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import Card from '../../UI/Card';
 import styles from './AddReservation.module.css';
@@ -7,6 +7,11 @@ const Backdrop = (props) => {
   return <div className={styles.backdrop}></div>
 }
 const RegisterDialog = () => {
+  
+  const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
+  const [date, setDate] = useState("");
+
   return (
     <Card>
       <form className={styles.modal}>

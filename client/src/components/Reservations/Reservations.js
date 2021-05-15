@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Reservation from "./Reservation/Rerservation";
 import AddReservation from "../Reservations/AddReservation/AddReservation";
 import styles from "./Reservations.module.css";

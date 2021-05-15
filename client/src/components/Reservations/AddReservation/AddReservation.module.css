@@ -10,16 +10,35 @@
 
 .modal {
   position: fixed;
+  text-align: center;
   background-color: white;
   top: 30vh;
   left: 10%;
   width: 80%;
   z-index: 100;
-  overflow: hidden;
 }
 
 .modal input {
   margin: 1rem auto;
   height: 6vh;
-  width:60%;
+  width: 60%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(180, 180, 180);
+}
+
+.modal button {
+  border-radius: 20px;
+  border: 1px solid #f1634a;
+  background-color: #f1634a;
+  color: #fff;
+  height: 3rem;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 10px 45px;
+}
+
+.modal input:focus {
+  border-bottom: 2px solid #f1634a;
 }
