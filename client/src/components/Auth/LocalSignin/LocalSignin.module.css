@@ -10,6 +10,7 @@
 }
 
 .form input {
+  display: block;
   margin: 1rem auto;
   height: 6vh;
   width: 70%;
@@ -29,6 +30,7 @@
 }
 
 .form button {
+  display: block;
   border-radius: 20px;
   border: 1px solid #f1634a;
   background-color: #f1634a;

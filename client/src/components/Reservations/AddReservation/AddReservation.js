@@ -12,22 +12,40 @@ const RegisterDialog = () => {
   const [text, setText] = useState("");
   const [date, setDate] = useState("");
 
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+    console.log("form is submitted");
+    console.log(title, text, date);
+  }
+  const onTitleChange = (event) => {
+    setTitle(event.target.value);
+  }
+  const onTextChange = (event) => {
+    setText(event.target.value);
+  }
+  const onDateChange = (event) => {
+    setDate(event.target.value);
+  }
   return (
     <Card>
-      <form className={styles.modal}>
+      <form className={styles.modal} onSubmit={ formSubmitHandler }>
         <h2>LUNCH登録</h2>
         <input
           type="text"
           placeholder="タイトル"
+          onChange={onTitleChange}
         />
         <input
-          type="password"
+          type="text"
           placeholder="内容"
+          onChange={onTextChange}
         />
         <input
-          type="date"/>
-        <button type="submit">登録</button>
-        <button>cancel</button>
+          type="date"
+          onChange={onDateChange}
+        />
+        <button type="submit">OK</button>
+        <button type="cancel">CANCEL</button>
       </form>
     </Card>
   )

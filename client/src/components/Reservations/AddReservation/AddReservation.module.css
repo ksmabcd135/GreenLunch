@@ -12,16 +12,17 @@
   position: fixed;
   text-align: center;
   background-color: white;
-  top: 30vh;
-  left: 10%;
-  width: 80%;
+  top: 50%;
+  left: 50%;
+  width: 60%;
   z-index: 100;
+  transform: translate(-50%, -50%);
 }
 
 .modal input {
   margin: 1rem auto;
   height: 6vh;
-  width: 60%;
+  width: 80%;
   border: none;
   outline: none;
   border-bottom: 2px solid rgb(180, 180, 180);
@@ -32,11 +33,13 @@
   border: 1px solid #f1634a;
   background-color: #f1634a;
   color: #fff;
-  height: 3rem;
+  width: 60%;
+  height: 20%;
+  margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
-  padding: 10px 45px;
+  padding: 5px 5px;
 }
 
 .modal input:focus {
