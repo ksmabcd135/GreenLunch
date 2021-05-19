@@ -2,11 +2,11 @@ import Title from "./Title/Title";
 import Footer from "./Footer/Footer";
 import styles from "./Reservation.module.css";
 
-const reservation = () => {
+const reservation = (props) => {
   return (
     <div className={styles.item}>
       <Title />
-      test grid layout for Reservations items
+      {props.title}
       <Footer />
     </div>
   );
