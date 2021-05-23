@@ -5,9 +5,8 @@ import styles from "./Reservation.module.css";
 const reservation = (props) => {
   return (
     <div className={styles.item}>
-      <Title />
-      {props.item.title}
-      {props.item.text}
+      <Title title={props.item.title} />
+        <p>{props.item.text}</p>
       <Footer />
     </div>
   );

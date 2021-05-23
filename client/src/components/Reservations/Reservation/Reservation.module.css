@@ -1,8 +1,7 @@
 .item {
   border: 1px solid salmon;
   height: 300px;
-  margin-left: 30px;
-  margin-top: 100px;
+  margin: 1rem;
   padding: 1em;
   border: 2px solid #ffcdd2;
   border-radius: 7%;
