@@ -23,13 +23,12 @@ const RegisterDialog = (props) => {
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    console.log(props);
     const newReservation = {
       title: title,
       text: text,
       date: date,
     };
-    props.onTest({...newReservation});
+    props.onExpenseReservation({...newReservation});
   }
   const onTitleChange = (event) => {
     setTitle(event.target.value);
@@ -67,13 +66,12 @@ const RegisterDialog = (props) => {
 
 const AddReservation = (props) => {
   const formHandler = (data) => {
-    console.log(`fromAddReservation >${data}`)
     props.onExpenseReservation(data)
   }
   return (
     <React.Fragment>
       {ReactDOM.createPortal(<Backdrop />, document.getElementById('backdrop'))}
-      {ReactDOM.createPortal(<RegisterDialog onTest={formHandler}/>, document.getElementById('register-reservation'))}
+      {ReactDOM.createPortal(<RegisterDialog onExpenseReservation={formHandler}/>, document.getElementById('register-reservation'))}
     </React.Fragment>
   )
 }

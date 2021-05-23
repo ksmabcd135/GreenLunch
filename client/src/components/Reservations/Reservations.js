@@ -9,12 +9,13 @@ const Reservations = () => {
   const [register, setRegister] = useState(false);
   const registerReservation = () => {
     setRegister(true);
-    console.log(register);
   };
   const saveExpenseReservationHandler = (expenseReservation) => {
+    console.log(expenseReservation.title, expenseReservation.text);
     setItems((prevExpenses) => {
-      return [items, ...prevExpenses];
+      return [...prevExpenses, expenseReservation];
     });
+    setRegister(false);
   };
   return (
     <React.Fragment>
@@ -25,7 +26,7 @@ const Reservations = () => {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <button className={styles.fab} onClick={registerReservation}>+</button>
-          {items.map(item => <Reservation title={item.title}/>)}
+          {items.map(item => <Reservation item={item}/>)}
         </div>
       </div>
     </React.Fragment>

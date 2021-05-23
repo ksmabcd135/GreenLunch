@@ -6,7 +6,8 @@ const reservation = (props) => {
   return (
     <div className={styles.item}>
       <Title />
-      {props.title}
+      {props.item.title}
+      {props.item.text}
       <Footer />
     </div>
   );
