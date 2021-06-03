@@ -16,10 +16,10 @@ const RegisterDialog = (props) => {
   useEffect(() => {
     const identifier = setTimeout(() => {
       setFormIsValid(
-      title.trim().length > 0 && text.trim().length > 0);
+      title.trim().length > 0 && text.trim().length > 0 && date);
   }, 500);
   return () => { clearTimeout(identifier) };
-  }, [title, text]);
+  }, [title, text, date]);
 
   const formSubmitHandler = (event) => {
     event.preventDefault();

@@ -1,5 +1,11 @@
 .round-text {
+  width: 6rem;
+  height: 2rem;
   background-color: #fa567a;
   border-radius: 30px;
   color: #fff;
+  text-align: center;
+  line-height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

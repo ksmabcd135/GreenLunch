@@ -6,7 +6,8 @@ const reservation = (props) => {
   return (
     <div className={styles.item}>
       <Title title={props.item.title} />
-      <RoundText title="DATE" text={props.item.date}/>
+      <RoundText title="DATE" text={props.item.date} />
+      <RoundText title="TEXT" text={props.item.text}/>
       <Footer />
     </div>
   );
