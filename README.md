@@ -4,6 +4,6 @@ Lunch Matching Web Application
 
 # Skills
 
-front-end: react.JS
+front-end: react.JS,redux
 
 back-end node.JS,graphQL,mongoDB
