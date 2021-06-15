@@ -6,7 +6,29 @@ import { createStore } from "redux";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import reducers from "./reducers";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql
+} from "@apollo/client";
+const client = new ApolloClient({
+  uri: 'http://localhost:4000',
+  cache: new InMemoryCache()
+});
 
+client.query(
+  {
+    query: gql`
+      query{
+        users{
+          userId,
+          userPw
+        }
+      }`
+  }
+).then(res => console.log("res>"+res.data.users[0].userId));
 const store = createStore(reducers);
 
 ReactDOM.render(

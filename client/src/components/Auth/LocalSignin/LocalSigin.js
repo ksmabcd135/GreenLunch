@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import styles from "./LocalSignin.module.css";
+import { gql, useQuery } from "@apollo/client";
 
 const LocalSignin = () => {
   //state for siginin
