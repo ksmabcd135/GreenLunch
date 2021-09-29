@@ -1,18 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import reducers from "./reducers";
-
-const store = createStore(reducers);
+import {GoogleAuthProvider} from "./components/auth/google/LoginWrapper"
 
 ReactDOM.render(
-  <Provider store={store}>
+  <GoogleAuthProvider>
     <App />
-  </Provider>,
+  </GoogleAuthProvider>,
   document.getElementById("root")
 );
 

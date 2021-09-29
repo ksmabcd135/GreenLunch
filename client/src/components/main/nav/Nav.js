@@ -1,4 +1,5 @@
 import React from "react";
+import Logout from "../../auth/google/Logout";
 import "./Nav.css";
 
 const Nav = () => {
@@ -6,12 +7,9 @@ const Nav = () => {
     <div>
       <nav className="nav">
         <ul className="list">
-          <li>
-            <a>All</a>
-          </li>
-          <li>
-            <a>MY</a>
-          </li>
+          <li><a>All</a></li>
+          <li><a>MY</a></li>
+          <li><Logout/></li>
         </ul>
       </nav>
       <header className="food" />

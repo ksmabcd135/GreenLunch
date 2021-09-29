@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import MainPage from './pages/Main';
 import LoginPage from './pages/Login';
-import { BrowserRouter as Router,Route } from 'react-router-dom';
-
+import { BrowserRouter as Router } from 'react-router-dom';
+import PublicRouter from './components/router/PublicRouter';
+import PrivateRouter from './components/router/PrivateRouter';
 class App extends Component {
 
   render() {
     return (
       <>
-      <Router>
-        <Route path='/' exact component={LoginPage}/>
-        <Route path='/main' component={MainPage}/>
-      </Router>
+        <Router>
+          <PublicRouter path="/" component={LoginPage} />
+          <PrivateRouter path="/main" component={MainPage} />                
+        </Router>
       </>
     )
   }

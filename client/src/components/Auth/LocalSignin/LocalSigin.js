@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import styles from "./LocalSignin.module.css";
-
+import Login from "../google/Login";
 const LocalSignin = () => {
   //state for siginin
   const [idText, setIdText] = useState("");
@@ -44,6 +44,7 @@ const LocalSignin = () => {
         onChange={pwTextChangeHandler}
       />
       <p>Forgot your password?</p>
+      <Login />
       <button type="submit" disabled={!formIsValid}>SIGNIN</button>
     </form>
   );
