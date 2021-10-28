@@ -34,5 +34,6 @@ func main() {
 	model.ConnectDB()
 
 	r.GET("/schedules", controller.FindSchedules)
+	r.POST("/new-schedule", controller.CreateSchedule)
 	r.Run()
 }

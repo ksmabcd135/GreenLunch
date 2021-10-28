@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -8,16 +9,26 @@ import (
 )
 
 func FindSchedules(c *gin.Context) {
-	var schedule model.Schedule
-	model.DB.First(&schedule)
+	var schedules []model.Schedule
+	model.DB.Find(&schedules)
 
-	c.JSON(http.StatusOK, gin.H{"data": schedule})
+	c.JSON(http.StatusOK, gin.H{"result": http.StatusOK, "data": schedules})
 }
 
 func CreateSchedule(c *gin.Context) {
-	// var input CreateSchedule
-	// if err := c.ShouldBind(&input); err != nil {
-	// 	c.JSON(http.StatusBadRequest, gin.H{"error": err})
-	// 	return
-	// }
+	title := c.Query("title")
+	message := c.Query("message")
+	fmt.Println(title, message)
+
+	if title == "" || message == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "request Parameter not good"})
+		fmt.Println(title, message)
+		return
+	}
+	schedule := model.Schedule{Title: title, Message: message}
+	result := model.DB.Create(&schedule)
+	fmt.Println(result)
+
+	c.JSON(http.StatusOK, gin.H{"result": http.StatusOK})
+	//return result.Status
 }
