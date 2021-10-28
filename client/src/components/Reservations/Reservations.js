@@ -11,7 +11,6 @@ const Reservations = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => { 
-    console.log("use effect is called");
     fetchScheduleHandler();
   },[])
   const registerReservation = () => {
@@ -29,10 +28,10 @@ const Reservations = () => {
     return axios.get('http://localhost:3000/schedules')
       .then(res => { 
         console.log(res.data);
-        const data = res.data;
+        const data = res.data.data;
         const schedules = data.map(schedule => {
           return {
-            id: schedule.Id,
+            id: schedule.ID,
             title: schedule.Title,
             message: schedule.Message
           }
@@ -50,7 +49,7 @@ const Reservations = () => {
       />}
       <div className={styles.container}>
         <button className={styles.fab} onClick={registerReservation}>+</button>
-        {items.map(item => <Reservation item={item}/>)}
+        {items.map(item => <Reservation key={ item.id } item={item}/>)}
       </div>
     </React.Fragment>
   );

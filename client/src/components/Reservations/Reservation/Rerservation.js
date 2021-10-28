@@ -7,7 +7,7 @@ const reservation = (props) => {
     <div className={styles.item}>
       <Title title={props.item.title} />
       <RoundText title="DATE" text={props.item.date} />
-      <RoundText title="TEXT" text={props.item.text}/>
+      <RoundText title="TEXT" text={props.item.message}/>
       <Footer />
     </div>
   );

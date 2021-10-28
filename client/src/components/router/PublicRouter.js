@@ -5,7 +5,6 @@ import { useGoogleAuth } from "../auth/google/LoginWrapper";
 const PublicRouter = ({ component: Component, ...rest }) => {
   
   const { isSignedIn } = useGoogleAuth();
-  console.log(`isSingend ${isSignedIn}`);
   return (
     <div>
       <Route {...rest} render={props => (
