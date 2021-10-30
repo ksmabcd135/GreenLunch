@@ -10,33 +10,34 @@ const Backdrop = (props) => {
 const RegisterDialog = (props) => {
   
   const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [message, setMessage] = useState("");
   const [date, setDate] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
     const identifier = setTimeout(() => {
       setFormIsValid(
-      title.trim().length > 0 && text.trim().length > 0 && date);
+      title.trim().length > 0 && message.trim().length > 0 && date);
   }, 500);
   return () => { clearTimeout(identifier) };
-  }, [title, text, date]);
+  }, [title, message, date]);
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
     const newReservation = {
       title: title,
-      text: text
+      message: message
     };
 
     axios.post(
       'http://localhost:8080/new-schedule',
-      {Title:newReservation.title, Message:newReservation.text})
+      {
+        Title: newReservation.title,
+        Message: newReservation.message
+      })
       .then(res => { 
-        //if res code is 400, represent error dialog
-        console.log(res);
+        console.log(newReservation);
         props.onExpenseReservation({...newReservation});
-        //if res code is 200, call onExpenseReservation method
       })
       .catch(err => { 
         console.log(err)
@@ -45,8 +46,8 @@ const RegisterDialog = (props) => {
   const onTitleChange = (event) => {
     setTitle(event.target.value);
   }
-  const onTextChange = (event) => {
-    setText(event.target.value);
+  const onMessageChange = (event) => {
+    setMessage(event.target.value);
   }
   const onDateChange = (event) => {
     setDate(event.target.value);
@@ -63,7 +64,7 @@ const RegisterDialog = (props) => {
         <input
           type="text"
           placeholder="内容"
-          onChange={onTextChange}
+          onChange={onMessageChange}
         />
         <input
           type="date"
