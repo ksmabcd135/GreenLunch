@@ -20,7 +20,7 @@ func CreateSchedule(c *gin.Context) {
 	err := c.ShouldBind(schedule)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"result": http.StatusBadRequest, "message": "request Parameter not good"})
+		c.JSON(http.StatusBadRequest, gin.H{"message": "request Parameter not good"})
 		return
 	}
 
