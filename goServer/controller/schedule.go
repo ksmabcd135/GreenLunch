@@ -18,13 +18,14 @@ func FindSchedules(c *gin.Context) {
 func CreateSchedule(c *gin.Context) {
 	schedule := &model.Schedule{}
 	err := c.ShouldBind(schedule)
+
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": "request Parameter not good"})
+		c.JSON(http.StatusBadRequest, gin.H{"result": http.StatusBadRequest, "message": "request Parameter not good"})
 		return
 	}
+
 	result := model.DB.Create(&schedule)
 	fmt.Println(result)
 
 	c.JSON(http.StatusOK, gin.H{"result": http.StatusOK})
-	//return result.Status
 }
