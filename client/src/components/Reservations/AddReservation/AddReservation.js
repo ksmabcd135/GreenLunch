@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import ReactDOM from 'react-dom';
 import Card from '../../UI/Card';
 import styles from './AddReservation.module.css';
@@ -25,10 +26,21 @@ const RegisterDialog = (props) => {
     event.preventDefault();
     const newReservation = {
       title: title,
-      text: text,
-      date: date,
+      text: text
     };
-    props.onExpenseReservation({...newReservation});
+
+    axios.post(
+      'http://localhost:8080/new-schedule',
+      {Title:newReservation.title, Message:newReservation.text})
+      .then(res => { 
+        //if res code is 400, represent error dialog
+        console.log(res);
+        props.onExpenseReservation({...newReservation});
+        //if res code is 200, call onExpenseReservation method
+      })
+      .catch(err => { 
+        console.log(err)
+      })
   }
   const onTitleChange = (event) => {
     setTitle(event.target.value);

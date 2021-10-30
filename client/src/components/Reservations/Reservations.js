@@ -25,7 +25,7 @@ const Reservations = () => {
 
   //api to get schedules
   const fetchScheduleHandler = () => {
-    return axios.get('http://localhost:3000/schedules')
+    return axios.get('http://localhost:8080/schedules')
       .then(res => { 
         console.log(res.data);
         const data = res.data.data;
